@@ -12,6 +12,7 @@
   --accent-color: #404bbf;
   --header-border-color: #e7e9fc;
   --portfolio-card-border-color: #e7e9fc;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -116,6 +117,7 @@ body {
 }
 
 .nav-link {
+  position: relative;
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -125,10 +127,26 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
+  transition: color var(--transition);
 }
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent-color);
+}
+.current {
+  color: var(--accent-color);
+}
+.current::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 .contacts {
@@ -153,6 +171,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
+  transition: color var(--transition);
 }
 
 .contacts-link:hover,
@@ -209,6 +229,8 @@ body {
   letter-spacing: 0.04em;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--transition);
 }
 
 .hero-button:hover,
@@ -360,6 +382,8 @@ body {
   border-radius: 50%;
 
   background-color: #4d5ae5;
+
+  transition: background-color var(--transition);
 }
 
 .team-soc-link:is(:hover, :focus) {
@@ -394,9 +418,12 @@ body {
   height: 88px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+
+  transition: border-color var(--transition);
 }
 .customers-icon {
   fill: #8e8f99;
+  transition: fill var(--transition);
 }
 .customers-link:is(:hover, :focus) {
   border-color: var(--accent-color);
@@ -462,7 +489,9 @@ body {
   height: 40px;
   border-radius: 50%;
 
-  background-color: transparent;
+  background-color: #4d5ae5;
+
+  transition: background-color var(--transition);
 }
 .social-link:is(:hover, :focus) {
   background-color: #31d0aa;
@@ -497,6 +526,9 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
+
+  transition: background-color var(--transition), color var(--transition),
+    border var(--transition), box-shadow var(--transition);
 }
 
 .portfolio-button:hover,
@@ -521,6 +553,7 @@ body {
 }
 .portfolio-list-link {
   display: block;
+  transition: box-shadow var(--transition);
 }
 .portfolio-list-link:is(:hover, :focus) {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
