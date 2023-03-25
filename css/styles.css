@@ -660,6 +660,22 @@ body {
 
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.modal-icon {
+  fill: #2e2f42;
+  transition: fill var(--transition);
+}
+
+.modal-button:is(:hover, :focus) {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.modal-button:is(:hover, :focus) .modal-icon {
+  fill: #ffffff;
 }
 
 .is-hidden {
